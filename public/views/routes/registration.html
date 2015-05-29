@@ -1,0 +1,28 @@
+<h1>Welcome Registration!</h1>
+<p>You are Registering</p>
+
+<section>
+    <form name="myform" novalidate ng-submit="onSubmit(user)">
+        <div>
+            <input type="text" name="userName" placeholder="Create your Username" autofocus ng-model="user.userName">
+            <p ng-show="myform.firstName.$invalid && myform.firstName.$touched">Must be a valid Username</p>
+        </div>
+        <div>
+            <input type="text" name="firstName" placeholder="Enter your first name" autofocus ng-model="user.firstName">
+            <p ng-show="myform.firstName.$invalid && myform.firstName.$touched">Must be a valid first name</p>
+        </div>
+        <div>
+            <input type="text" name="lastName" placeholder="Enter your last name" autofocus ng-model="user.lastName">
+            <p ng-show="myform.lastName.$invalid && myform.lastName.$touched">Must be a valid last name</p>
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="Enter your email" autofocus ng-model="user.email">
+            <p ng-show="myform.email.$invalid && myform.email.$touched">Must be a valid email</p>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Enter your password"  ng-model="user.password">
+            <p ng-show="myform.password.$invalid && myform.password.$touched">Password is required</p>
+        </div>
+        <button type="submit" class="btn" ng-disabled="myform.$invalid">Login</button>
+    </form>
+</section>
