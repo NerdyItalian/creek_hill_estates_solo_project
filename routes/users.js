@@ -1,46 +1,57 @@
-var express = require('express')
-var router = express.Router()
-var User = require('../models/user.js');
+var express = require('express');
+var router = express.Router();
+var Users = require('../models/userSchema.js');
 
 
 /* GET /users listing. */
 router.get('/', function(req, res, next) {
-  User.find(function (err, todos) {
-    if (err) return next(err);
-    res.json(todos);
-  });
+    Users.find(function (err, todos) {
+        if (err) return next(err);
+        res.json(todos);
+    });
 });
 
 /* POST /users */
 router.post('/', function(req, res, next) {
-  User.create(req.body, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+    Users.create(req.body, function (err, post) {
+        if (err)
+            return next(err);
+        else
+            res.redirect('/');
+    });
 });
 
-/* GET /todos/:id */
+///* POST /users */
+//router.post('/', function(req, res, next) {
+//    Users.create(req.body, function (err, post) {
+//        if (err)
+//        {console.log(err); return next(err)};
+//        res.json(post);
+//    });
+//});
+
+/* GET /users/:id */
 router.get('/:id', function(req, res, next) {
-  User.findById(req.params.id, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+    Users.findById(req.params.id, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+    });
 });
 
-/* PUT /todos/:id */
+/* PUT /users/:id */
 router.put('/:id', function(req, res, next) {
-  User.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+    Users.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+    });
 });
 
-/* DELETE /todos/:id */
+/* DELETE /users/:id */
 router.delete('/:id', function(req, res, next) {
-  User.findByIdAndRemove(req.params.id, req.body, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+    Users.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+    });
 });
 
 console.log('Users.js loaded');

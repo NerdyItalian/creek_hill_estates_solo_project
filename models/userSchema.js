@@ -37,4 +37,4 @@ var UserSchema = new Schema({
 //};
 
 console.log('register model loaded');
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
