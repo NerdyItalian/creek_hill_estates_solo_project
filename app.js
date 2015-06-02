@@ -13,7 +13,9 @@ var localStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 var register = require('./routes/register');
 var home = require('./routes/home');
+var users = require('./routes/users');
 var User = require('./models/userSchema');
+
 
 
 var app = express();
@@ -41,12 +43,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-
-app.use('/', routes);
-app.use('/register', register);
-app.use('/home', home);
-
 app.use(session({
     secret: 'secret',
     key: 'user',
@@ -54,6 +50,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: {maxAge: 60000, secure: false}
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -87,6 +84,13 @@ passport.use('local', new localStrategy({
         });
     });
 }));
+
+
+app.use('/', routes);
+app.use('/register', register);
+app.use('/home', home);
+app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

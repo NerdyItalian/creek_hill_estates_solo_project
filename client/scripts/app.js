@@ -16,6 +16,6 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl: "/views/routes/users.html"
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
 }]);
