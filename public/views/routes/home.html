@@ -1,11 +1,13 @@
-<h1>Welcome home!</h1>
-<p>You are home</p>
+<h1>Welcome to Creek Hill Estates!</h1>
+<p>You're here!!!</p>
+
+
 
 <section>
-    <form name="myform" novalidate ng-submit="onSubmit()">
+    <form name="myform" novalidate ng-submit="onSubmit(user)">
         <div>
-            <input type="email" name="email" placeholder="Enter your email" autofocus ng-model="user.email">
-            <p ng-show="myform.email.$invalid && myform.email.$touched">Must be a valid email</p>
+            <input type="text" name="username" placeholder="Enter your username" autofocus ng-model="user.username">
+            <p ng-show="myform.username.$invalid && myform.username.$touched">Must be a valid username</p>
         </div>
 
         <div>

@@ -12,8 +12,8 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl: "/views/routes/registration.html",
             controller: 'RegistrationController'
         }).
-        when('/projects', {
-            templateUrl: "/views/routes/projects.html"
+        when('/users', {
+            templateUrl: "/views/routes/users.html"
         }).
         otherwise({
             redirectTo: '/home'
