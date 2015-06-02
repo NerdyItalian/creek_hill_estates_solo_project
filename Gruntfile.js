@@ -49,7 +49,11 @@ module.exports = function(grunt) {
                 src: [
                     "views/routes/home.html",
                     "views/routes/registration.html",
-                    "views/routes/users.html"
+                    "views/routes/users.html",
+                    "views/routes/loggedin.html",
+                    "views/routes/events.html",
+                    "views/routes/sale.html",
+                    "views/routes/about.html"
                 ],
                 "dest": "public/"
             }

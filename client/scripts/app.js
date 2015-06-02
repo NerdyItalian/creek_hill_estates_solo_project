@@ -15,6 +15,18 @@ myApp.config(['$routeProvider', function($routeProvider){
         when('/users', {
             templateUrl: "/views/routes/users.html"
         }).
+        when('/loggedin', {
+            templateUrl: "/views/routes/loggedin.html"
+        }).
+        when('/about', {
+            templateUrl: "/views/routes/about.html"
+        }).
+        when('/events', {
+            templateUrl: "/views/routes/events.html"
+        }).
+        when('/sale', {
+            templateUrl: "/views/routes/sale.html"
+        }).
         otherwise({
             redirectTo: '/'
         });

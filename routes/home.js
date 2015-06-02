@@ -3,27 +3,6 @@ var router = express.Router();
 var passport = require('passport');
 var path = require('path');
 
-//router.get('/', function(req, res, next) {
-//    res.json(req.isAuthenticated());
-//});
-//
-//router.post('/', passport.authenticate('local'), function(req, res){
-//       console.log("we are in the first part of the post");
-//        if (req.isAuthenticated()){
-//            console.log("is authenticated");
-//            res.redirect('/users');
-//        } else {
-//            console.log("is not authenticated");
-//        }
-//    }
-//);
-//router.post('/',
-//    passport.authenticate('local', {
-//        successRedirect: '/users',
-//        failureRedirect: '/'
-//    })
-//);
-
 router.post('/', passport.authenticate('local'), function(req, res, next){
     console.log("i am here in home.js", req.body);
 
