@@ -99,6 +99,7 @@ app.use('/neighbors', neighbors);
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
+    console.log(err, req.url);
     next(err);
 });
 
@@ -109,10 +110,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+        next(err);
     });
 }
 
@@ -120,10 +118,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+    next(err);
 });
 
 

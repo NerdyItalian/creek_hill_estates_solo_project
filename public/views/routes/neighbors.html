@@ -15,13 +15,10 @@
 <div class="col-md-4" ng-controller="NeighborsController">
     <form ng-model="neighbor" novalidate>
 
-        <p ng-show="neighbor.ownerOne">Owner One: {{neighbor.ownerOne}}</p>
-        <p ng-hide="neighbor.ownerOne">Enter owner ones name!</p>
-        <p>Name: <input type="text" ng-model="neighbor.ownerOne"/></p>
+        <p ng-show="neighbor.owner">Owner(s): {{neighbor.owner}}</p>
+        <p ng-hide="neighbor.owner">Enter owner(s) name(s)!</p>
+        <p>Name: <input type="text" ng-model="neighbor.owner"/></p>
 
-        <p ng-show="neighbor.ownerTwo">Owner One: {{neighbor.ownerTwo}}</p>
-        <p ng-hide="neighbor.ownerTwo">Enter owner twos name!</p>
-        <p>Name: <input type="text" ng-model="neighbor.ownerTwo"/></p>
 
         <p ng-show="neighbor.kids">Kid(s): {{neighbor.kids}}</p>
         <p ng-hide="neighbor.kids">Do you have kids? </p>
@@ -46,6 +43,9 @@
 <div class="col-md-offset-2 col-md-8">
     <h2 class="col-md-offset-3">NEIGHBORS!</h2>
     <ul>
-        <li ng-repeat="neighbor in neighbors">{{neighbor.neighbor}}</li>
+        <li ng-repeat="neighbor in neighbors">{{neighbor.owner}}</li>
+        <li ng-repeat="neighbor in neighbors">{{neighbor.kids}}</li>
+        <li ng-repeat="neighbor in neighbors">{{neighbor.animals}}</li>
+        <li ng-repeat="neighbor in neighbors">{{neighbor.house}}</li>
     </ul>
 </div>
