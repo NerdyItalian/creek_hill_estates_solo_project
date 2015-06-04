@@ -1,19 +1,30 @@
-<h1>Welcome to Creek Hill Estates!</h1>
-<p>Login Here!!!</p>
-
-
-
-<section>
-    <form name="myform" novalidate ng-submit="onSubmit(user)">
-        <div>
-            <input type="text" name="username" placeholder="Enter your username" autofocus ng-model="user.username">
-            <p ng-show="myform.username.$invalid && myform.username.$touched">Must be a valid username</p>
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><a href="#">×</a></button>
+            <h1 class="text-center">Login</h1>
         </div>
-
-        <div>
-            <input type="password" name="password" placeholder="Enter your password"  ng-model="user.password">
-            <p ng-show="myform.password.$invalid && myform.password.$touched">Password is required</p>
+        <div class="modal-body">
+            <form class="form col-md-12 center-block" name="myform" novalidate ng-submit="onSubmit(user)">
+                <div class="form-group">
+                    <input class="form-control input-lg" type="text" name="username" placeholder="Enter your username" autofocus ng-model="user.username">
+                    <p ng-show="myform.username.$invalid && myform.username.$touched">Must be a valid username</p>
+                </div>
+                <div class="form-group">
+                    <input class="form-control input-lg" type="password" name="password" placeholder="Enter your password"  ng-model="user.password">
+                    <p ng-show="myform.password.$invalid && myform.password.$touched">Password is required</p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="myform.$invalid">Login</button>
+                </div>
+            </form>
         </div>
-        <button type="submit" class="btn" ng-disabled="myform.$invalid">Login</button>
-    </form>
-</section>
+        <div class="modal-footer">
+            <div class="col-md-12">
+                <button class="btn" data-dismiss="modal" aria-hidden="true"><a href="#registration">Register</a></button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
