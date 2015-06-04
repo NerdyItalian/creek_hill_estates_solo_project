@@ -21,6 +21,10 @@ module.exports = function(grunt) {
             usersController: {
                 src: 'client/scripts/controllers/neighborsController.js',
                 dest: 'public/javascripts/controllers/neighborsController.min.js'
+            },
+            saleController: {
+                src: 'client/scripts/controllers/saleController.js',
+                dest: 'public/javascripts/controllers/saleController.min.js'
             }
         },
         copy: {

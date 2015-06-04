@@ -26,7 +26,8 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl: "/views/routes/events.html"
         }).
         when('/sale', {
-            templateUrl: "/views/routes/sale.html"
+            templateUrl: "/views/routes/sale.html",
+            controller: "SaleController"
         }).
         otherwise({
             redirectTo: '/'

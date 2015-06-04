@@ -16,7 +16,7 @@ router.get('/', function(req, res, next){
 
 router.post('/', function(req, res, next){
     var people = new Neighbors(req.body);
-    console.log("what is being grabbed from form??", req.body)
+    console.log("what is being grabbed from form??", req.body);
 
 
     people.save(function(err){
