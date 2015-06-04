@@ -12,8 +12,9 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl: "/views/routes/registration.html",
             controller: 'RegistrationController'
         }).
-        when('/users', {
-            templateUrl: "/views/routes/users.html"
+        when('/neighbors', {
+            templateUrl: "/views/routes/neighbors.html",
+            controller: 'NeighborsController'
         }).
         when('/loggedin', {
             templateUrl: "/views/routes/loggedin.html"

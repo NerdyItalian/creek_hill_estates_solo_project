@@ -14,7 +14,9 @@ var routes = require('./routes/index');
 var register = require('./routes/register');
 var home = require('./routes/home');
 var users = require('./routes/users');
+var neighbors = require('./routes/neighbors');
 var User = require('./models/userSchema');
+var Neighbor = require('./models/neighborSchema');
 
 
 
@@ -90,6 +92,7 @@ app.use('/', routes);
 app.use('/register', register);
 app.use('/home', home);
 app.use('/users', users);
+app.use('/neighbors', neighbors);
 
 
 // catch 404 and forward to error handler

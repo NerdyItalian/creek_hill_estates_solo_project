@@ -17,6 +17,10 @@ module.exports = function(grunt) {
             home: {
                 src: 'client/scripts/controllers/home.js',
                 dest: 'public/javascripts/controllers/home.min.js'
+            },
+            usersController: {
+                src: 'client/scripts/controllers/neighborsController.js',
+                dest: 'public/javascripts/controllers/neighborsController.min.js'
             }
         },
         copy: {
@@ -49,7 +53,7 @@ module.exports = function(grunt) {
                 src: [
                     "views/routes/home.html",
                     "views/routes/registration.html",
-                    "views/routes/users.html",
+                    "views/routes/neighbors.html",
                     "views/routes/loggedin.html",
                     "views/routes/events.html",
                     "views/routes/sale.html",

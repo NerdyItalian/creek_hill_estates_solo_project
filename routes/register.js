@@ -13,9 +13,8 @@ router.post('/', function(req, res, next) {
     Users.create(req.body, function (err, post) {
         if (err)
             return next(err);
-        else
-            res.redirect('/');
     });
+    res.send("success");
 });
 
 
