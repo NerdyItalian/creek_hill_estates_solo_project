@@ -42,10 +42,12 @@
 
 <div class="col-md-offset-2 col-md-8">
     <h2 class="col-md-offset-3">NEIGHBORS!</h2>
-    <ul>
-        <li ng-repeat="neighbor in neighbors">{{neighbor.owner}}</li>
-        <li ng-repeat="neighbor in neighbors">{{neighbor.kids}}</li>
-        <li ng-repeat="neighbor in neighbors">{{neighbor.animals}}</li>
-        <li ng-repeat="neighbor in neighbors">{{neighbor.house}}</li>
+    <ul class="container col-md-4" ng-repeat="neighbor in neighbors">
+        <p>Owner(s): {{neighbor.owner}}</p>
+        <p ng-show="neighbor.kids">Kids (s): {{neighbor.kids}}</p>
+        <p ng-hide="neighbor.kids">No kids</p>
+        <p ng-show="neighbor.animals">Animal(s): {{neighbor.animals}}</p>
+        <p ng-hide="neighbor.animals">No Animals</p>
+        <p>House #: {{neighbor.house}}</p>
     </ul>
 </div>
