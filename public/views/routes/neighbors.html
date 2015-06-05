@@ -1,5 +1,7 @@
-<div class="col-md-offset-2">
-    <ul class="nav nav-pills">
+<div class="container">
+
+<div class="col-md-12 text-center">
+    <ul class="nav nav-pills centeredPill">
         <li><a href="#neighbors">Neighbors</a></li>
         <li><a href="#events">Calendar</a></li>
         <li><a href="#sale">For Sale</a></li>
@@ -7,41 +9,45 @@
     </ul>
 </div>
 
-<div class="col-md-offset-4">
+<div class="col-md-12 text-center">
     <h1>Creek Hill Estates Roll Call</h1>
     <h2>These are our neighbors!!</h2>
 </div>
 
-<div class="col-md-4" ng-controller="NeighborsController">
-    <form ng-model="neighbor" novalidate>
+<div class="col-md-6" ng-controller="NeighborsController">
+    <form class="form-horizontal" ng-model="neighbor" novalidate>
+        <fieldset>
+            <legend>Tell us a bit about you! </legend>
+            <div class="form-group">
+                <p ng-show="neighbor.owner">Owner(s): {{neighbor.owner}}</p>
+                <p ng-hide="neighbor.owner">Enter owner(s) name(s)!</p>
+                <p>Name: <input class="form-control" type="text" ng-model="neighbor.owner"/></p>
 
-        <p ng-show="neighbor.owner">Owner(s): {{neighbor.owner}}</p>
-        <p ng-hide="neighbor.owner">Enter owner(s) name(s)!</p>
-        <p>Name: <input type="text" ng-model="neighbor.owner"/></p>
 
+                <p ng-show="neighbor.kids">Kid(s): {{neighbor.kids}}</p>
+                <p ng-hide="neighbor.kids">Do you have kids? </p>
+                <p>Name(s): <input class="form-control" type="text" ng-model="neighbor.kids"/></p>
 
-        <p ng-show="neighbor.kids">Kid(s): {{neighbor.kids}}</p>
-        <p ng-hide="neighbor.kids">Do you have kids? </p>
-        <p>Name(s): <input type="text" ng-model="neighbor.kids"/></p>
+                <p ng-show="neighbor.animals">Animal(s): {{neighbor.animals}}</p>
+                <p ng-hide="neighbor.animals">Do you have animals? </p>
+                <p>Name(s): <input class="form-control" type="text" ng-model="neighbor.animals"/></p>
 
-        <p ng-show="neighbor.animals">Animal(s): {{neighbor.animals}}</p>
-        <p ng-hide="neighbor.animals">Do you have animals? </p>
-        <p>Name(s): <input type="text" ng-model="neighbor.animals"/></p>
+                <p ng-show="neighbor.house">House Number: {{neighbor.house}}</p>
+                <p ng-hide="neighbor.house">What is your house number? </p>
+                <p>Number: <input class="form-control" type="text" ng-model="neighbor.house"/></p>
 
-        <p ng-show="neighbor.house">House Number: {{neighbor.house}}</p>
-        <p ng-hide="neighbor.house">What is your house number? </p>
-        <p>Number: <input type="text" ng-model="neighbor.house"/></p>
-
-        <input type="submit" ng-click="add(neighbor)" value="Save"/>
+                <input class="btn btn-primary" type="submit" ng-click="add(neighbor)" value="Save"/>
+            </div>
+        </fieldset>
     </form>
 </div>
 
-<div class="col-md-4 col-md-offset-2">
-    <img src="../images/CHEMap.jpg">
+<div class="col-md-6">
+    <img src="../images/CHEMap.jpg" class="big-image">
 </div>
 
 <div class="col-md-offset-2 col-md-8">
-    <h2 class="col-md-offset-3">NEIGHBORS!</h2>
+    <h2 class="col-md-offset-3 col-md-6">NEIGHBORS!</h2>
     <ul class="container col-md-4" ng-repeat="neighbor in neighbors">
         <p>Owner(s): {{neighbor.owner}}</p>
         <p ng-show="neighbor.kids">Kids (s): {{neighbor.kids}}</p>
@@ -50,4 +56,5 @@
         <p ng-hide="neighbor.animals">No Animals</p>
         <p>House #: {{neighbor.house}}</p>
     </ul>
+</div>
 </div>

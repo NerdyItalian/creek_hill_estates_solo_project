@@ -1,8 +1,27 @@
 body {
-    padding: 50px;
     font-family: 'Signika', sans-serif;
+    background-color: rgba(5, 21, 100, 0.79);
+    color: #e25213;
 }
 
-a {
-    color: #e25213;
+legend {
+    color: #f7f7fe;
+}
+
+.big-image {
+    max-width: 100%;
+}
+
+.centeredPill {
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.centeredPill li {
+    width: 25%;
+}
+
+.nav-pills>li+li {
+    margin-left: 0;
 }

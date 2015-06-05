@@ -1,46 +1,54 @@
-<div class="col-md-offset-2">
-    <ul class="nav nav-pills">
-        <li><a href="#neighbors">Neighbors</a></li>
-        <li><a href="#events">Calendar</a></li>
-        <li><a href="#sale">For Sale</a></li>
-        <li><a href="#about">Vendors & Contact</a></li>
-    </ul>
-</div>
+<div class="container">
+    <div class="col-md-12 text-center">
+        <ul class="nav nav-pills centeredPill">
+            <li><a href="#neighbors">Neighbors</a></li>
+            <li><a href="#events">Calendar</a></li>
+            <li><a href="#sale">For Sale</a></li>
+            <li><a href="#about">Vendors & Contact</a></li>
+        </ul>
+    </div>
 
-<h1>BUY STUFF</h1>
-<p>Neighbors have these things for sale!!</p>
+    <div class="col-md-12 text-center">
+        <h1>BUY STUFF</h1>
+        <p>Neighbors have these things for sale!!</p>
+    </div>
 
-<div class="col-md-4" ng-controller="SaleController">
-    <form ng-model="sale" novalidate>
-
-        <p ng-show="sale.seller">For Sale By: {{sale.seller}}</p>
-        <p ng-hide="sale.seller">Enter Seller(s) name!</p>
-        <p>For Sale By: <input type="text" ng-model="sale.seller"/></p>
-
-
-        <p ng-show="sale.subject">Name of item for Sale: {{sale.subject}}</p>
-        <p ng-hide="sale.subject">What is the name of the item for sale?</p>
-        <p>Name of item for Sale: <input type="text" ng-model="sale.subject"/></p>
-
-        <p ng-show="sale.description">Description of item for sale: {{sale.description}}</p>
-        <p ng-hide="sale.description">Describe the item for sale </p>
-        <p>Description of item: <input type="text" ng-model="sale.description"/></p>
-
-        <p ng-show="sale.cost">How Much? : {{sale.cost}}</p>
-        <p ng-hide="sale.cost">How much do you want? </p>
-        <p>Cost: <input type="text" ng-model="sale.cost"/></p>
-
-        <input type="submit" ng-click="add(sale)" value="Save"/>
-    </form>
-</div>
+    <div class="col-md-6 col-md-offset-3" ng-controller="SaleController">
+        <form class="form-horizontal" ng-model="sale" novalidate>
+            <fieldset>
+                <legend>Tell us what you're selling! </legend>
+                    <div class="form-group">
+                        <p ng-show="sale.seller">For Sale By: {{sale.seller}}</p>
+                        <p ng-hide="sale.seller">Enter Seller(s) name!</p>
+                        <p>For Sale By: <input class="form-control"type="text" ng-model="sale.seller"/></p>
 
 
-<div class="col-md-offset-2 col-md-8">
-    <h2 class="col-md-offset-3">FOR SALE!</h2>
-    <ul class="container col-md-4" ng-repeat="sale in sales">
-        <p>Seller: {{sale.seller}}</p>
-        <p>Item for Sale: {{sale.subject}}</p>
-        <p>Description: {{sale.description}}</p>
-        <p>Cost: {{sale.cost}}</p>
-    </ul>
+                        <p ng-show="sale.subject">Name of item for Sale: {{sale.subject}}</p>
+                        <p ng-hide="sale.subject">What is the name of the item for sale?</p>
+                        <p>Name of item for Sale: <input class="form-control"type="text" ng-model="sale.subject"/></p>
+
+                        <p ng-show="sale.description">Description of item for sale: {{sale.description}}</p>
+                        <p ng-hide="sale.description">Describe the item for sale </p>
+                        <p>Description of item: <input class="form-control"type="text" ng-model="sale.description"/></p>
+
+                        <p ng-show="sale.cost">How Much? : {{sale.cost}}</p>
+                        <p ng-hide="sale.cost">How much do you want? </p>
+                        <p>Cost: <input class="form-control"type="text" ng-model="sale.cost"/></p>
+
+                        <input class="btn btn-primary" ng-click="add(sale)" value="Save"/>
+                    </div>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div class="col-md-12 text-center">
+        <h2 class="col-md-12 text-center">FOR SALE!</h2>
+        <ul class="col-md-4" ng-repeat="sale in sales">
+            <p>Seller: {{sale.seller}}</p>
+            <p>Item for Sale: {{sale.subject}}</p>
+            <p>Description: {{sale.description}}</p>
+            <p>Cost: {{sale.cost}}</p>
+        </ul>
+    </div>
 </div>
